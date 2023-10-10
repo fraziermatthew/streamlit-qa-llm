@@ -71,8 +71,9 @@ user_q = st.text_area("Enter your text here...")
 if st.button("Get Response"):
   try:
     with st.spinner("Model is working on it..."):
-      result = model({"question":user_q}, return_only_outputs=True)
-      excl_result = excl_model({"question":result['answer']}, return_only_outputs=True)
+      result = model(user_q)
+    #   result = model({"question":user_q}, return_only_outputs=True)
+    #   excl_result = excl_model({"question":result['answer']}, return_only_outputs=True)
       # TODO need if condiditon - if past threshold send excl_result else send result
       st.subheader('Your response:')
       st.write(result['answer'])
