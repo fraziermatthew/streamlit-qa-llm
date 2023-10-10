@@ -41,7 +41,7 @@ chatgpt = ChatOpenAI(openai_api_key=st.secrets["openai_api_key"], temperature=0,
 memory = ConversationSummaryMemory(llm=chatgpt,memory_key="chat_history", return_messages=True)
 retriever = vs.as_retriever(search_kwargs=search_kwargs)
 model = ConversationalRetrievalChain.from_llm(llm=chatgpt,
-                                             retriever=vsr,
+                                             retriever=retriever,
                                              memory=memory,
                                              verbose=True,
                                              condense_question_prompt=CONDENSE_QUESTION_PROMPT
