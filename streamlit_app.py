@@ -19,7 +19,7 @@ st.set_page_config(layout="centered", page_title="AP CSP")
 st.header("AP CSP")
 st.write("---")
 
-vStore = Chroma(persist_directory=persist_directory, embedding_function=embeddings)
+vs = Chroma(persist_directory=persist_directory, embedding_function=embeddings)
 excl_vs = Chroma(persist_directory=excl_persist_directory, embedding_function=embeddings)
 
 _template = """You are a tutor for a high school student Computer Science Principles course.
