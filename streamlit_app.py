@@ -75,7 +75,8 @@ if st.button("Get Response"):
       excl_result = excl_model({"question":result['answer']}, return_only_outputs=True)
       # TODO need if condiditon - if past threshold send excl_result else send result
       st.subheader('Your response:')
-      st.write(excl_result['answer'])
+      st.write(result['answer'])
+    #   st.write(excl_result['answer'])
   except Exception as e:
     st.error(f"An error occurred: {e}")
     st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
